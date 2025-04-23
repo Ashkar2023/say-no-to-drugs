@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No to Drugs</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <style>
+        .boldonse-regular {
+            font-family: "Boldonse", system-ui;
+            font-weight: 400;
+            line-height: 1.3em;
+        }
+
+        /* Animated gradient background */
+        .bg-animate {
+            background: linear-gradient(-45deg, #1f2937, #111827, #7f1d1d, #991b1b);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Glow effect for headings */
+        .glow-text {
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.5);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(239, 68, 68, 0.9), 0 0 30px rgba(239, 68, 68, 0.7);
+            }
+        }
+
+        /* Hover effects for buttons */
+        .hover-grow {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-grow:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.4);
+        }
+
+        /* Fade-in animation for sections */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Staggered fade-in for stats */
+        .stat-item:nth-child(1) { animation-delay: 0.2s; }
+        .stat-item:nth-child(2) { animation-delay: 0.4s; }
+        .stat-item:nth-child(3) { animation-delay: 0.6s; }
+
+        /* Quote section styling */
+        .quote-section {
+            position: relative;
+            overflow: hidden;
+            background-size: 200% 200%;
+            animation: gradientBg 10s ease infinite;
+        }
+
+        @keyframes gradientBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .quote-section::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: 0;
+            font-size: 200px;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: serif;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .quote-section::after {
+            content: "";
+            position: absolute;
+            bottom: -120px;
+            right: 20px;
+            font-size: 200px;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: serif;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Rotating hand animation */
+        .rotate-hand {
+            animation: rotateHand 25s linear infinite;
+            transform-origin: center;
+        }
+
+        @keyframes rotateHand {
+            0% { transform: rotate(90deg) scale(-0.5); }
+            25% { transform: rotate(80deg) scale(-0.5); }
+            50% { transform: rotate(90deg) scale(-0.5); }
+            75% { transform: rotate(100deg) scale(-0.5); }
+            100% { transform: rotate(90deg) scale(-0.5); }
+        }
+
+        /* Social icon pulse on hover */
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #ef4444 !important;
+            filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.8));
+        }
+
+        /* Nav link animation */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #ef4444;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-animate max-h-svh">
+    <!-- Header Section -->
+    <section class="w-full grid grid-cols-1 md:grid-cols-2 boldonse-regular text-red-500 mt-6 px-4">
+        <div class="flex flex-col fade-in" style="animation-delay: 0.1s;">
+            <h1 class="text-7xl md:text-9xl leading-none glow-text">SAY NO TO</h1>
+            <div class="flex items-center space-x-4">
+                <h1 class="text-7xl md:text-9xl leading-none glow-text">DRUGS</h1>
+            </div>
+            <a href="#" class="mt-8 max-w-xs bg-red-600 text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover-grow text-center">
+                Take Action Now
+            </a>
+        </div>
+
+        <div class="overflow-hidden max-h-full flex justify-center items-center">
+            <img src="./assets/hand.png" alt="Hand" class="h-auto object-contain rotate-hand" />
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="h-auto md:h-[300px] bg-transparent py-12" id="top">
+        <div class="h-full flex flex-col md:flex-row justify-around items-center">
+            <div class="text-center mb-8 md:mb-0 stat-item fade-in">
+                <h3 class="text-4xl font-bold text-white glow-text">8500+</h3>
+                <p class="text-lg text-gray-300">Drug-related arrests</p>
+            </div>
+            <div class="text-center mb-8 md:mb-0 stat-item fade-in">
+                <h3 class="text-4xl font-bold text-white glow-text">1200+</h3>
+                <p class="text-lg text-gray-300">Rehabilitation programs</p>
+            </div>
+            <div class="text-center stat-item fade-in">
+                <h3 class="text-4xl font-bold text-white glow-text">500+</h3>
+                <p class="text-lg text-gray-300">Awareness campaigns</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <div class="py-12 px-6 md:px-12 fade-in" style="animation-delay: 0.4s;">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl text-white font-bold mb-4 glow-text">Peace is Our Mission</h2>
+                <p class="mb-4 text-gray-300">
+                    The Kerala Police Department is committed to combating drug abuse and trafficking throughout the
+                    state. Our comprehensive approach includes enforcement, prevention, education, and rehabilitation.
+                </p>
+                <p class="mb-6 text-gray-300">
+                    We work closely with schools, communities, and healthcare providers to create awareness about the
+                    dangers of drug use and to provide support to those affected by addiction.
+                </p>
+                <a href="#" class="inline-block bg-red-700 text-white px-6 py-3 rounded-md font-semibold hover-grow">
+                    Learn More About Our Initiative
+                </a>
+            </div>
+            <div class="md:w-1/2 mt-6 md:mt-0">
+                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                    <img src="/api/placeholder/600/400" alt="Peace mission image" class="w-full h-auto rounded-lg shadow-lg hover-grow">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-sm">Building a drug-free Kerala</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Section -->
+    <section class="quote-section bg-gradient-to-br from-red-500 from-40% to-blue-300 py-16 md:py-24 fade-in" style="animation-delay: 0.6s;">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <blockquote class="text-white">
+                <p class="text-2xl md:text-4xl font-light leading-tight mb-6">
+                    "Recovery is not just about sobriety. It's about creating a life where drugs are no longer necessary
+                    for survival."
+                </p>
+                <div class="flex items-center">
+                    <div class="h-px bg-white bg-opacity-30 flex-grow mr-4"></div>
+                    <cite class="text-white text-opacity-80 not-italic">
+                        Kerala Police Department
+                    </cite>
+                </div>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="bg-gray-800 text-red-500 py-16 fade-in" style="animation-delay: 0.8s;">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 boldonse-regular glow-text">Join Our Fight Against Drugs</h2>
+            
+            <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-white">
+                Together, we can make Kerala drug-free. Report suspicious activities, spread awareness, and support those affected by addiction.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-16">
+                <a href="#" class="bg-red-500 hover-grow text-white font-bold py-3 px-8 rounded-md">
+                    Report Drug Activity
+                </a>
+                <a href="#" class="border-2 border-red-500 hover-grow text-red-500 font-bold py-3 px-8 rounded-md">
+                    Read Prevention Tips
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t border-red-500 border-opacity-30">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <!-- Brand Section -->
+            <div class="fade-in" style="animation-delay: 1s;">
+                <h3 class="font-bold text-xl mb-4 boldonse-regular text-red-500">Kerala Police</h3>
+                <p class="text-red-500 font-bold mb-4">Say No To Drugs</p>
+                <p class="text-white text-opacity-80 mb-6">Together, we can build a drug-free Kerala. Report
+                    drug-related activities and seek help.</p>
+
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="text-white social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="fade-in" style="animation-delay: 1.1s;">
+                <h3 class="font-bold text-xl mb-4 text-red-500">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-white text-opacity-80 nav-link">Home</a>
+                    </li>
+                    <li><a href="#" class="text-white text-opacity-80 nav-link">About
+                            Campaign</a></li>
+                    <li><a href="#" class="text-white text-opacity-80 nav-link">Blog &
+                            News</a></li>
+                    <li><a href="#" class="text-white text-opacity-80 nav-link">Contact
+                            Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="fade-in" style="animation-delay: 1.2s;">
+                <h3 class="font-bold text-xl mb-4 text-red-500">Resources</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-white text-opacity-80 nav-link">Drug
+                            Awareness</a></li>
+                    <li><a href="#" class="text-white text-opacity-80 nav-link">Rehabilitation
+                            Centers</a></li>
+                    <li><a href="#" class="text-white text-opacity-80 nav-link">Prevention
+                            Programs</a></li>
+                    <li><a href="#" class="text-white text-opacity-80 nav-link">File a
+                            Complaint</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="fade-in" style="animation-delay: 1.3s;">
+                <h3 class="font-bold text-xl mb-4 text-red-500">Contact Us</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start hover-grow">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-red-500"></i>
+                        <span>Police Headquarters, Thiruvananthapuram, Kerala - 695010</span>
+                    </li>
+                    <li class="flex items-center hover-grow">
+                        <i class="fas fa-phone-alt mr-3 text-red-500"></i>
+                        <span>+91 471 2721547</span>
+                    </li>
+                    <li class="flex items-center hover-grow">
+                        <i class="fas fa-envelope mr-3 text-red-500"></i>
+                        <span>info@keralapolice.gov.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-6 pt-8 mt-8 border-t border-red-500 border-opacity-20 text-center text-white text-opacity-60">
+            <p>&copy; 2025 Kerala Police Anti-Drug Campaign. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./assets/scripts.js"></script>
+</body>
+
+</html>
