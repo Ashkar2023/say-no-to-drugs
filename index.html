@@ -15,8 +15,20 @@
             font-family: 'Special Gothic Expanded One', system-ui, sans-serif;
             font-weight: 400;
         }
+        
+        .animate-fade-in{
+            animation: fade-in .8s ease-in;
+        }
 
-        /* Animated gradient background */
+        @keyframes fade-in{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
         .bg-animate {
             background: linear-gradient(-45deg, #1f2937, #111827, #7f1d1d, #991b1b);
             background-size: 400% 800%;
@@ -86,31 +98,31 @@
 </head>
 
 <body class="bg-animate boldonse-regular max-h-svh">
-    <section class="w-full grid md:grid-cols-2  md:grid-rows-2 text-red-500 ">
-        <div class="flex flex-col text-[170px]">
-            <h1 class=" leading-none">SAY NO TO</h1>
-            <div class="flex items-center space-x-4">
+    <section class="w-full grid md:grid-cols-2 md:grid-rows-2 text-red-500 p-4">
+        <div class="flex flex-col text-[80px] md:text-[170px] text-center md:text-left animate-fade-in">
+            <h1 class="leading-none">SAY NO TO</h1>
+            <div class="flex justify-center md:justify-start items-center space-x-4">
                 <h1 class="leading-none">DRUGS</h1>
             </div>
         </div>
 
         <img src="./assets/hand.png" alt="Hand"
-            class="max-h-[500px] w-full object-contain -rotate-90 scale-150 image-stroke filter drop-shadow-[10px_0_2px_red]" />
+            class="max-h-[300px] md:max-h-[500px] w-full object-contain -rotate-90 md:scale-150 image-stroke filter drop-shadow-[10px_0_2px_red]" />
+
         <div class="flex flex-col justify-center items-center text-center p-4">
-            <h2 class="text-6xl font-bold text-white mb-4">Join the Movement</h2>
-            <p class="text-lg text-gray-300 mb-6">Be a part of the change. Together, we can create a drug-free society.
-            </p>
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">Join the Movement</h2>
+            <p class="text-base md:text-lg text-gray-300 mb-6">Be a part of the change. Together, we can create a drug-free society.</p>
             <a href="#top"
-                class="bg-red-700 text-white px-6 py-3 rounded-md font-semibold hover:bg-red-600 transition-colors">
+                class="bg-red-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-md font-semibold hover:bg-red-600 transition-colors">
                 Take Action Now
             </a>
         </div>
+
         <div class="flex flex-col justify-center items-center text-center p-4">
-            <h2 class="text-6xl font-bold text-white mb-4">Report Anonymously</h2>
-            <p class="text-lg text-gray-300 mb-6">Help us fight against drugs by reporting suspicious activities
-                anonymously.</p>
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">Report Anonymously</h2>
+            <p class="text-base md:text-lg text-gray-300 mb-6">Help us fight against drugs by reporting suspicious activities anonymously.</p>
             <a href="#"
-                class="bg-red-700 text-white px-6 py-3 rounded-md font-semibold hover:bg-red-600 transition-colors">
+                class="bg-red-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-md font-semibold hover:bg-red-600 transition-colors">
                 Report Now
             </a>
         </div>
